@@ -1,0 +1,130 @@
+React Project creation(auto):
+-------------------------
+
+npm install -g create-react-app    
+create-react-app <file name>;
+npm start
+
+    or
+
+npx create-react-app <file name>
+   
+    or
+
+Create sample project (manually) :
+----------------------
+
+Step 1: Initialize NPM (Node Package Manager)
+
+	mkdir new-react-app      (creates new folder)
+	cd new-react-app
+	npm init --y                   (creates package.json file)
+----------
+Step 2: Install React, Webpack, and Babel
+
+	npm install react react-dom 
+	npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin @babel/core babel-loader @babel/preset-env @babel/preset-react
+
+	enter -> code .
+	Then vs code will get opens
+----------
+Step 3: Create the files ,Let's create the files now.( npm install touch-cli -g )
+
+	touch webpack.config.js
+	mkdir src
+	cd src
+	touch index.js
+	touch index.html
+-----------
+Step 4: webpack.config.js (copy below in this webpack file )
+
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  // the output bundle won't be optimized for production but suitable for development
+  mode: 'development',
+  // the app entry point is /src/index.js
+  entry: path.resolve(__dirname, 'src', 'index.js'),
+  output: {
+  	// the output of the webpack build will be in /dist directory
+    path: path.resolve(__dirname, 'dist'),
+    // the filename of the JS bundle will be bundle.js
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+      	// for any file with a suffix of js or jsx
+        test: /\.jsx?$/,
+        // ignore transpiling JavaScript from node_modules as it should be that state
+        exclude: /node_modules/,
+        // use the babel-loader for transpiling JavaScript to a suitable format
+        loader: 'babel-loader',
+        options: {
+          // attach the presets to the loader (most projects use .babelrc file instead)
+          presets: ["@babel/preset-env", "@babel/preset-react"]
+        }
+      }
+    ]
+  },
+  // add a custom index.html as the template
+  plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'index.html') })]
+};
+
+-----------
+
+Step 5:  
+-> src/index.js:
+-----------------
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(<h1>Helloworld React!</h1>, document.getElementById('root'));
+
+-> src/index.html : 
+-----------------
+
+<html>
+  <head>
+    <title>Hello world App</title>
+  </head>
+  <body>
+  <div id="root"></div>
+  <script src="bundle.js"></script>
+  </body>
+</html>
+
+Step 6:    Create NPM run scripts
+----------
+		Modify package.json scripts property to include the following npm scripts:
+
+  // package.json
+    ...
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
+  },
+  ...
+
+Step 7: npm start (ouput)
+------
+
+** when we run prog it runs script by default we get test script in react , & we need to add more scripts to run our scripts
+
+
+CMD COMMANDS:
+------------
+
+ dir --> (details of all files in current directory)
+cd .. -->(goes onestep inside another sub directory) 
+ls (gives list of all files in directrot == dir) 
+
+
+
+yarn test --> (will exucte & display mssg of test script present in react prg)
+
+npm test --> (same as yarn test)
+
+yarn/npm build  -> it will create dist folder with "bundle.js" & "index.html" file to deploy ,run on server

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+     <!-- react script tags -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!--  Instead of above react scripts we need to add react librabries in project folder
+
+        Step 1: npm install react react-dom 
+        Step 2: npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin @babel/core babel-loader @babel/preset-env @babel/preset-react
+    -->
+
+    <!-- Production files(minified files)-->
+
+    <!-- <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script> -->
+
+     <!-- babel script for JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!--  instead of babel script add the babel to project folder itself
+        Step 1: Run npm init -y (if it fails, here’s a fix)
+        Step 2: Run npm install babel-cli@6 babel-preset-react-app@3 
+    -->
+
+    <!-- command to make babel to production file (babel.min.js)-->
+    <!-- npx babel --watch src --out-dir . --presets react-app/prod -->
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="like_button_container">  </div> 
+
+    <!-- Load our React component. -->
+    <script src="like_button.js" ></script>
+
+
+</body>
+</html>
