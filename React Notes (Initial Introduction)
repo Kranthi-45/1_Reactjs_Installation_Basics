@@ -1,0 +1,143 @@
+Need to install Nodejs software & NPM , but npm comes with nodejs
+
+Nodejs  - Runtime environment to run reactjs application
+        - comes with NPM package manager inbuilt
+
+A package manager, such as Yarn or npm. It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them.
+
+A bundler, such as webpack or Parcel. It lets you write modular code and bundle it together into small packages to optimize load time.
+
+A compiler such as Babel. It lets you write modern JavaScript code that still works in older browsers.
+
+React    - this dependency helps to support to write reactjs code & components 
+           by using React.Component,  React.createElement()..etc.
+
+ReactDOM - above written code if we want to display in ui need to use ReactDOM which will render onto the browser for output
+            by using .createRoot()  & .render() methods of ReactDOM
+
+######################
+
+React Project demo using Internal js file:
+----------------------------------------
+
+create hello-demo.html file,  so react related js code will write in same html file so called internal js script
+
+
+React Project demo using External js file:
+----------------------------------------
+create like-button.html & also like_button.js file, now react related js code will write in separete .js file & link to .html  using
+script tag called external js
+
+
+#####################
+
+Using react related scripts to implement reactjs code:( manual)
+-----------------------------------------------------
+use below all react related scripts tags in html header to start supporting to write react code
+Below react, reactDOM & babel scripts for react proj
+ 
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+Use npm & install react dependencies to implement reactjs code:( semi auto)
+-----------------------------------------------------
+Instead of above react scripts we can also install/add react dependencies in project folder like below
+
+npm install react react-dom 
+npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin @babel/core babel-loader @babel/preset-env @babel/preset-react
+
+
+Instead of babel script install/add the babel to project folder itself by Running below commands
+
+npm init -y (if it fails, here’s a fix)
+npm install babel-cli@6 babel-preset-react-app@3 
+
+Use create-react-app to implement react project/code: (automatic)
+----------------------------------------------------
+npm install -g create-react-app    
+create-react-app <app_name>
+cd <app_name>
+npm start
+
+########################
+
+Rendering:
+----------
+ Inserting/Loading the HTML content onto the web browser to display output,  so after writing reactjs code if u render only then
+ displays reactjs code in ui or else wont display.
+
+React Functional component:  advance react
+--------------------------
+In hello-demo.html the internal .js example based on functional component, so we will create component using function keyword
+
+      function MyApp() {
+        return <h1>Hello, world!</h1>;   // this is rendering of html from functional comp using return keyword
+      }
+
+Class Component:
+-----------------
+The like_button.js created with Class components by using class keyword
+
+class LikeButton extends React.Component {
+  ....
+
+  render() {
+      return  <h1>Hello, world!</h1>;  // this is how inside render() method need to write html code & return in class comp to display
+    }
+  }
+}
+
+########################
+
+Render Type 1: ( traditional rendering )
+--------------------------------
+
+const container = document.getElementById('root'); // take one parent html tag to insert whole reactjs code into it like container
+const root = ReactDOM.createRoot(container);       // making this above tag as root/main element 
+root.render(<MyApp />);                     // then insert/render ur necessary reactjs code/component into above root DOM element
+
+Render Type 2: ( JSX simple render )
+--------------------------------
+
+let domContainer = document.getElementById('root');
+ReactDOM.render(<LikeButton />, domContainer);     // render component & where to insert/render will provide side by side
+
+
+########################
+
+writting reactjs code without jsx in oldway :
+------------------------------------------
+ writing HTML code in .js fle - using tradition syntax React.creatElement as we cannot write html code direclty in .js files 
+ we have seperate syntax refer like_button.js file
+
+ //React.createElement("tag_name","attr_name","html_text")
+
+--> like_button.js:
+
+    return React.createElement(
+        'button',
+        { onClick: () => this.setState({ liked: true }) },
+        'Like'
+   );
+
+
+writting reactjs code using jsx syntax latest way:
+--------------------------------------------
+// writing HTML code in .js fle - using JSX syntax, see below with jsx we can write html code easily in .js file
+// enclose html code in braces ( )
+
+--> like_button.js:
+
+    return (
+      <button onClick={() => this.setState({ liked: true })}>
+        Like
+      </button>
+    );
+
+###########################
+
+development mode/code/build/scripts means  which is used during develoment of our code so it is easy debug & find errors
+
+production mode/code/build/scripts means which we finally deploy in server & customer using becoz site loads faster as it optmized
+ - we will build the react project using "npm run build" & then converted to production files       
