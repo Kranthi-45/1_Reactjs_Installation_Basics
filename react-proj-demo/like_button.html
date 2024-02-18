@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-    <!--  Instead of above react scripts we need to add react librabries in project folder
+    <!--  Instead of above react scripts we need to installl/add react librabries in project folder
 
         Step 1: npm install react react-dom 
         Step 2: npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin @babel/core babel-loader @babel/preset-env @babel/preset-react
@@ -23,9 +23,9 @@
      <!-- babel script for JSX -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-    <!--  instead of babel script add the babel to project folder itself
-        Step 1: Run npm init -y (if it fails, here’s a fix)
-        Step 2: Run npm install babel-cli@6 babel-preset-react-app@3 
+    <!--  instead of babel script install/add the babel to project folder itself Run below commands
+        Step 1: npm init -y (if it fails, here’s a fix)
+        Step 2: npm install babel-cli@6 babel-preset-react-app@3 
     -->
 
     <!-- command to make babel to production file (babel.min.js)-->
@@ -34,11 +34,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="like_button_container">  </div> 
-
-    <!-- Load our React component. -->
+    <div id="root">  </div> 
+    <!-- Load or link our React component. -->
     <script src="like_button.js" ></script>
-
-
 </body>
 </html>

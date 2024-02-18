@@ -9,11 +9,12 @@
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
+  
   <body>
     <div id="root"></div>
 
     <script type="text/babel">
-      //funtional component
+      //funtional component  - advance react dont need to use React.createElement or React.Component as class component
       function MyApp() {
         return <h1>Hello, world!</h1>;
       }
@@ -21,7 +22,7 @@
       const container = document.getElementById('root');
       const root = ReactDOM.createRoot(container);
       root.render(<MyApp />);
-      
+
     </script>
 
   </body>

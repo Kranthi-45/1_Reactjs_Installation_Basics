@@ -2,13 +2,16 @@ React Project creation(auto):
 -------------------------
 
 npm install -g create-react-app    
-create-react-app <file name>;
+create-react-app <app_name>
+cd <app_name>
 npm start
 
     or
 
-npx create-react-app <file name>
-   
+npx create-react-app <app_name>
+cd <app_name>
+npm start
+
     or
 
 Create sample project (manually) :
@@ -16,7 +19,7 @@ Create sample project (manually) :
 
 Step 1: Initialize NPM (Node Package Manager)
 
-	mkdir new-react-app      (creates new folder)
+	mkdir new-react-app            (creates new folder)
 	cd new-react-app
 	npm init --y                   (creates package.json file)
 ----------
@@ -81,7 +84,7 @@ Step 5:
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<h1>Helloworld React!</h1>, document.getElementById('root'));
+ReactDOM.render(<h1>Hello world React!</h1>, document.getElementById('root'));
 
 -> src/index.html : 
 -----------------
@@ -91,8 +94,8 @@ ReactDOM.render(<h1>Helloworld React!</h1>, document.getElementById('root'));
     <title>Hello world App</title>
   </head>
   <body>
-  <div id="root"></div>
-  <script src="bundle.js"></script>
+    <div id="root"></div>
+    <script src="bundle.js"></script>
   </body>
 </html>
 
@@ -111,20 +114,23 @@ Step 6:    Create NPM run scripts
 Step 7: npm start (ouput)
 ------
 
-** when we run prog it runs script by default we get test script in react , & we need to add more scripts to run our scripts
+** when we run prog it runs script by default we get test script in react & need to add more scripts to run our scripts.
 
 
 CMD COMMANDS:
 ------------
 
- dir --> (details of all files in current directory)
-cd .. -->(goes onestep inside another sub directory) 
-ls (gives list of all files in directrot == dir) 
+dir --> (details of all files in current directory)
+cd .. -->(goes onestep backwards another sub directory) 
+ls (gives list of all files in directroot == dir) 
 
 
+npm start --> (to start & run react app)
+yarn start
 
-yarn test --> (will exucte & display mssg of test script present in react prg)
+npm build  -> it will create dist folder with "bundle.js" & the "index.html" file to deploy ,run on server
+yarn build
 
+yarn test --> (will exucte & display mssg of test script present in react prog)
 npm test --> (same as yarn test)
 
-yarn/npm build  -> it will create dist folder with "bundle.js" & "index.html" file to deploy ,run on server
